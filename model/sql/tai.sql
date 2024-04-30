@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 30 avr. 2024 à 13:00
+-- Généré le : mar. 30 avr. 2024 à 14:46
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -29,29 +29,44 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `document`;
 CREATE TABLE IF NOT EXISTS `document` (
-  `id_user_client` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_createur` int(11) NOT NULL,
+  `id_validateur` int(11) NOT NULL,
   `profile` int(11) NOT NULL,
-  `dimension` int(11) NOT NULL,
+  `longueur` int(11) NOT NULL,
   `materiau` int(11) NOT NULL,
   `etat` int(11) NOT NULL,
-  PRIMARY KEY (`id_user_client`)
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateur`
+-- Structure de la table `user`
 --
 
-DROP TABLE IF EXISTS `utilisateur`;
-CREATE TABLE IF NOT EXISTS `utilisateur` (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `login` int(11) NOT NULL,
-  `mdp` int(11) NOT NULL,
-  `mail` int(11) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `role` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `login` (`login`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COMMENT='Example of user table for login info';
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `login`, `password`, `role`, `creation_date`) VALUES
+(1, 'Homer', 'Simpson', 'donut', '202cb962ac59075b964b07152d234b70', 0, '2024-01-03 15:41:56'),
+(2, 'Marge', 'Simpson', 'marge', '519b2f2d0d0c048c6a5d085f79d6012c', 0, '2024-01-03 15:41:56'),
+(3, 'Bart', 'Simpson', 'el barto', '172924aadec293666b805437b84c18d7', 0, '2024-01-03 15:41:56'),
+(4, 'Lisa', 'Simpson', 'lisa_simpson', 'f61f2e52cef0031f01f332033298f9e9', 0, '2024-01-03 15:41:56');
 
 -- --------------------------------------------------------
 
