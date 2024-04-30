@@ -10,7 +10,7 @@
     function include_header() {
         ?>
         <header>
-            <h1>The main title</h1>
+            <h1>Profilé adapté expertise</h1>
             <h2>Just a sub title</h2>
         </header>
         <?php
