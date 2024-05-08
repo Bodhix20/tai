@@ -36,12 +36,18 @@
                 <div id="creationBrut">
                     <?php
                     if($_SESSION['role']==0 || $_SESSION['role']==1){
-                        include_createBrut();
+                        ?>            
+                        <button id="creerBrut">Créer un brut</button>
+                        <?php
                     }
                     ?>
                 </div>
                 <div id="brutsExistants">
-                    <?php include_mesBruts(); ?>
+                    <?php 
+                        ?>
+                        <button id="mesBruts">Mes bruts</button>
+                        <?php
+                    ?>
                 </div>
             </div>
 

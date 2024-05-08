@@ -9,9 +9,32 @@
 
             $userModel = new UserModel();
 
-            $userModel->create_user($_POST['firstname'],$_POST['lastname'],$_POST['login'],$_POST['pwd'],$_POST['roles']);
+            if($userModel->check_login_exists($_POST['login'])) {
+                // If the login already exists, display an error message or handle it accordingly
+                $something_to_say = "Login already exists. Please choose a different login.";
+
+                require_once(__DIR__."/view/php/register.php");
+                
+            }else{
+                $result = $userModel->create_user($_POST['firstname'],$_POST['lastname'],$_POST['login'],$_POST['pwd'],$_POST['roles']);
+                $something_to_say = "Succesfully created a new account";                              
+
+                if ($result['success']==true) {
+                    require_once(__DIR__."/view/php/loginExample.php");
+                }else{
+                    require_once(__DIR__."/view/php/register.php");
+                }
+            }  
+            
+
+
+
+            
         }
     }
+
+    
+    
 
 
 

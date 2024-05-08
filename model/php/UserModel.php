@@ -87,6 +87,28 @@ class UserModel extends DBModel {
         return $result;
     }
 
+    /**
+     * Checks if a certain login already exists in the db 
+     */
+    function check_login_exists($login) {
+        // Prepare the SQL statement to check if the login already exists in the database
+        $request = "SELECT COUNT(*) AS count FROM user WHERE login = :login";
+        $statement = $this->db->prepare($request);
+        $statement->execute(["login" => $login]);
+
+        // Fetch the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+        // Check if any rows were returned
+        if ($result['count'] > 0) {
+            // Login already exists
+            return true;
+        } else {
+            // Login doesn't exist
+            return false;
+        }
+    }
+
     // other useful methods to interact with the database
     // could be to add a new user, to delete a user, to update a user, etc.
     // all these methods will be called by the controller

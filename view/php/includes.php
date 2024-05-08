@@ -25,18 +25,6 @@
         <?php
     }
 
-    function include_createBrut(){
-        ?>            
-            <button id="creerBrut">Créer un brut</button>
-        <?php
-    }
-    function include_mesBruts(){
-        ?>
-            <button id="mesBruts">Mes bruts</button>
-        <?php
-    }
-
-
     function include_footer() {
         ?>
         <footer>
