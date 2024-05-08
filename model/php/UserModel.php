@@ -39,7 +39,51 @@ class UserModel extends DBModel {
             $result["firstname"] = $entries[0]['firstname'];
             $result["lastname"] = $entries[0]['lastname'];
             $result["id"] = $entries[0]['id'];
+            $result["role"] = $entries[0]['role'];
         }
+        return $result;
+    }
+
+
+    /**
+     * Inserts a new user into the database
+     */
+    function create_user(string $firstname, string $lastname, string $login, string $password, int $role) {
+        $result = [];
+    
+        if (!$this->connected) {
+            // Connection to the database failed. Handle this according to your application's logic.
+            // For this example, we'll return an empty result array.
+            return $result;
+        }
+    
+        // Hash the password before storing it in the database (for security reasons)
+        $hashed_password = md5($password);
+    
+        // Prepare the SQL statement to insert a new user into the database
+        $request = "INSERT INTO user (firstname, lastname, login, password, role) VALUES (:firstname, :lastname, :login, :password, :role)";
+        $statement = $this->db->prepare($request);
+    
+        // Execute the SQL statement, binding parameters to prevent SQL injection
+        $success = $statement->execute([
+            "firstname" => $firstname,
+            "lastname" => $lastname,
+            "login" => $login,
+            "password" => $hashed_password,
+            "role" => $role
+        ]);
+    
+        // Check if the user was successfully inserted
+        if ($success) {
+            // User created successfully
+            $result["success"] = true;
+        } else {
+            // Failed to create user
+            // You can handle errors based on your application's logic
+            // For this example, we'll return an error message
+            $result["error"] = "Failed to create user. Please try again.";
+        }
+    
         return $result;
     }
 

@@ -20,7 +20,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="view/css/example.css">
-        <title>Login Example</title>
+        <title>Login</title>
     </head>
     <body>
         
@@ -42,6 +42,8 @@
                 <button type="submit">Submit</button>
             </fieldset>
         </form>
+
+        <a href="/view/php/register.php"><p> Pas de compte ? Créez en un ! </p></a>
 
         <?php include_footer(); ?>
 

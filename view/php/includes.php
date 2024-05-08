@@ -11,8 +11,28 @@
         ?>
         <header>
             <h1>Profilé adapté expertise</h1>
-            <h2>Just a sub title</h2>
+            <!-- A form to logout -->
+            <!-- It redirects to the form controller -->
+            <!-- Note that this could have been done with a simple link and a $_GET parameter -->
+            <form method="post" action="loginController.php">
+                <fieldset>
+                    <legend>Logout</legend>
+                    <button type="submit">Logout</button>
+                </fieldset>
+            </form>
         </header>
+        
+        <?php
+    }
+
+    function include_createBrut(){
+        ?>            
+            <button id="creerBrut">Créer un brut</button>
+        <?php
+    }
+    function include_mesBruts(){
+        ?>
+            <button id="mesBruts">Mes bruts</button>
         <?php
     }
 
