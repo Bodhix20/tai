@@ -10,7 +10,7 @@ html {
 
 
 body {
-    width: 100%;
+    width: auto;
     margin: 0px auto;
     height: 100vh;
     background-color: white;
@@ -18,14 +18,17 @@ body {
 
 header{
     background-image: url(/figs/banner.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
 h1 {
     text-align: center;
-    font-size: 2em;
-    color: grey;
-    border-bottom: thin goldenrod solid;
+    font-size: 4em;
+    color: white;
     margin-top: 0px;
+    background-color: #0d3d70ad;
+    padding: 0.5%;
 }
 
 h2 {
@@ -49,7 +52,7 @@ footer {
     position: absolute;
     bottom: 0px;
     margin: 0px;
-    width: 100%;
+    width: 98%;
 }
 
 
@@ -83,6 +86,18 @@ h3 {
     
 }
 
+#logoutFormContainer fieldset{
+    border : none;
+}
+
+#logoutFormContainer fieldset button{
+    float: right;
+    padding: 1%;
+    background-color: #00b7d5a3;
+    border-radius: 10px;
+    color : white;
+}
+
 .loginFormContainer{
     width : 50%;
     margin-left: 25%;
@@ -97,4 +112,25 @@ h3 {
     padding : 2% ;
     margin : 1% ;
 
+}
+
+.loginFormContainer fieldset button[type=submit]{
+    padding: 0.5%;
+    background-color: #3bc33b;
+    color: white;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+#brutsOptionContainer{
+    display : flex;
+}
+
+#brutsOptionContainer div{
+    width : 50% ;
+}
+
+#brutsOptionContainer div button{
+    width : 100% ;
+    padding : 1%;
 }
