@@ -39,14 +39,20 @@
                         ?>            
                         <button id="creerBrut">Créer un brut</button>
                         <?php
+                    }else{
+                        ?>
+                        <button id="validerBruts">Valider des bruts</button>
+                        <?php
                     }
                     ?>
                 </div>
                 <div id="brutsExistants">
-                    <?php 
+                    <?php
+                    if($_SESSION['role']==0 || $_SESSION['role']==1) {
                         ?>
                         <button id="mesBruts">Mes bruts</button>
                         <?php
+                    }
                     ?>
                 </div>
             </div>
