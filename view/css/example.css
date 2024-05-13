@@ -134,3 +134,8 @@ h3 {
     width : 100% ;
     padding : 1%;
 }
+
+.profileLabels{
+    display: flex;
+    flex-direction: column;
+}
