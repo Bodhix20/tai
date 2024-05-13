@@ -20,8 +20,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="view/css/example.css">
+        <link rel="stylesheet" href="/view/css/example.css">
         <title>Welcome</title>
+
+        <script>
+            window.onload = function(){
+
+                //javascript event listener to open the corresponding pages uppon button click
+                document.getElementById("creerBrut").addEventListener("click",function(){
+                    window.open('/view/php/createBrut.php','_self')
+                })
+
+            }
+        </script>
+
     </head>
     <body>
         
