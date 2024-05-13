@@ -10,7 +10,8 @@
     function include_header() {
         ?>
         <header>
-            <h1>Profilé adapté expertise</h1>
+
+            <h1 id="titre">Profilé adapté expertise</h1>
             <!-- A form to logout -->
             <!-- It redirects to the form controller -->
             <!-- Note that this could have been done with a simple link and a $_GET parameter -->
