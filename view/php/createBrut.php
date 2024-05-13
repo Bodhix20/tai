@@ -29,13 +29,18 @@
 
         <div id="profileSelectionContainer">        
 
-            <label class="profileLabels" id="0"><img src="/figs/Profiles/Profile_Circulaire.PNG" width="200">Profile circulaire</label>
-            <label class="profileLabels" id="1"><img src="/figs/Profiles/Profile_Circulaire_Creux.PNG" width="200">Profile circulaire creux</label>
-            <label class="profileLabels" id="2"><img src="/figs/Profiles/Profile_Rectangulaire.PNG" width="200">Profile rectangulaire</label>
-            <label class="profileLabels" id="3"><img src="/figs/Profiles/Profile_Rectangulaire_Creux.PNG" width="200">Profile rectangulaire creux</label>
-            <label class="profileLabels" id="4"><img src="/figs/Profiles/Profile_I.PNG" width="200">Profile en I</label>
-            <label class="profileLabels" id="5"><img src="/figs/Profiles/Profile_T.PNG" width="200">Profile en T</label>
-            <label class="profileLabels" id="6"><img src="/figs/Profiles/Profile_U.PNG" width="200">Profile en U</label>
+            <label class="profileLabels"><img src="/figs/Profiles/Profile_Circulaire.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profileRadio" id="0"> Profile circulaire</label>
+            <label class="profileLabels"><img src="/figs/Profiles/Profile_Circulaire_Creux.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profileRadio" id="1"> Profile circulaire creux</label>
+            <label class="profileLabels"><img src="/figs/Profiles/Profile_Rectangulaire.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profileRadio" id="2"> Profile rectangulaire</label>
+            <label class="profileLabels"><img src="/figs/Profiles/Profile_Rectangulaire_Creux.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profileRadio" id="3"> Profile rectangulaire creux</label>
+            <label class="profileLabels"><img src="/figs/Profiles/Profile_I.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profileRadio" id="4"> Profile en I</label>
+            <label class="profileLabels"><img src="/figs/Profiles/Profile_T.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profileRadio" id="5"> Profile en T</label>
+            <label class="profileLabels"><img src="/figs/Profiles/Profile_U.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profileRadio" id="6"> Profile en U</label>
+
+        </div>
+
+        <div id="materialSelectionContainer">
+
 
         </div>
 
