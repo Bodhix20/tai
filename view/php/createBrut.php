@@ -22,6 +22,17 @@
 
         <main>
 
+        <div id="profileSelectionContainer">
+
+            <label class="profileLabels" id="circularLabel"><img src="/figs/Profiles/Profile_Circulaire.PNG" width="200">Profile circulaire</label>
+            <label class="profileLabels" id="circularHollowLabel"><img src="/figs/Profiles/Profile_Circulaire_Creux.PNG" width="200">Profile circulaire creux</label>
+            <label class="profileLabels" id="rectangularProfile"><img src="/figs/Profiles/Profile_Rectangulaire.PNG" width="200">Profile rectangulaire</label>
+            <label class="profileLabels" id="rectangulaireHollowLabel"><img src="/figs/Profiles/Profile_Rectangulaire_Creux.PNG" width="200">Profile rectangulaire creux</label>
+            <label class="profileLabels" id="iProfileLabel"><img src="/figs/Profiles/Profile_I.PNG" width="200">Profile en I</label>
+            <label class="profileLabels" id="tProfileLabel"><img src="/figs/Profiles/Profile_T.PNG" width="200">Profile en T</label>
+            <label class="profileLabels" id="uProfileLabel"><img src="/figs/Profiles/Profile_U.PNG" width="200">Profile en U</label>
+            
+        </div>
 
 
         </main>
