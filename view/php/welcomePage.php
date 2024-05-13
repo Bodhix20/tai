@@ -33,7 +33,16 @@
 
             }
         </script>
+        <script>
+            window.onload = function(){
 
+                //javascript event listener to open the corresponding pages uppon button click
+                document.getElementById("mesbruts").addEventListener("click",function(){
+                    window.open('/view/php/mybrut.php','_self')
+                })
+
+            }
+        </script>
     </head>
     <body>
         
