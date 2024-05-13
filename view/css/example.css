@@ -135,7 +135,24 @@ h3 {
     padding : 1%;
 }
 
-#profileSelectionContainer label{
-    display: flex;
-    flex-direction: column;
+#profileSelectionContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Adjust gap between items as needed */
+    justify-content: center; /* Center items horizontally */
+}
+
+.profileLabels {
+    text-align: center; /* Center the content horizontally */
+    margin: 0; /* Reset margin to avoid extra spacing */
+    padding : 10px;
+}
+
+.profileLabels:hover{
+    background-color:rgb(255, 255, 255) ;
+}
+
+.profileLabels img {
+    display: block; /* Ensure images behave as block elements */
+    margin: 0 auto 10px; /* Center the images horizontally and add space below */
 }
