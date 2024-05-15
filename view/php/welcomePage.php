@@ -12,7 +12,9 @@
     // __DIR__ allows you to use relative paths explicitly
     // here, the file is in the same folder as the includes.php file (view/)
     include_once __DIR__ . '/includes.php';
-    
+    if(!isset($_SESSION['firstname'])){
+        session_start();
+    }
 ?>
 
 

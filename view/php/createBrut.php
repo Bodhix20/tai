@@ -3,7 +3,7 @@
     // __DIR__ allows you to use relative paths explicitly
     // here, the file is in the same folder as the includes.php file (view/)
     include_once __DIR__ . '/includes.php';
-    
+    session_start();
 ?>
 
 
@@ -20,9 +20,7 @@
     <body>
         
         <!-- PHP only used to display stuff -->
-        <?php include_header(); 
-        echo($_SESSION['id'])
-        ?>
+        <?php include_header();?>
 
 
         <main>
@@ -41,21 +39,23 @@
             </div>
 
             <div id="lengthAndMaterialSelectionContainer" style="display : none ;">
-                <h3>Sélectionnez un matériau</h3>
+                <h3>Sélectionnez un matériau et une longueur</h3>
                 <br>
                 
-                <select name="materiau">
-                    <option value="" selected disabled hidden>Choisir un matériau</option>
-                    <option value="0">Acier</option>
-                    <option value="1">Acier inoxydable</option>
-                    <option value="2">Aluminium</option>                
-                </select>
-                <br>
+                <div id="createBrutInputContainer">
+                    <select name="materiau">
+                        <option value="" selected disabled hidden>Choisir un matériau</option>
+                        <option value="0">Acier</option>
+                        <option value="1">Acier inoxydable</option>
+                        <option value="2">Aluminium</option>                
+                    </select>
+                    <br>
 
-                <input type="text" placeholder="Choisissez une longueur" name="longueur">
-                <br>
+                    <input type="text" placeholder="Choisissez une longueur" name="longueur">
+                    <br>
 
-                <input type="submit" value="Submit">
+                    <input type="submit" value="Submit">
+                </div>
             </div>
         </form>
 

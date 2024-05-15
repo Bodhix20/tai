@@ -156,3 +156,7 @@ h3 {
     display: block; /* Ensure images behave as block elements */
     margin: 0 auto 10px; /* Center the images horizontally and add space below */
 }
+
+#createBrutInputContainer{
+    display : flex ; 
+}

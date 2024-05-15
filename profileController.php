@@ -1,6 +1,7 @@
 <?php
 // Perform any necessary includes first
 require_once(__DIR__."/model/php/ProfileModel.php");
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if all required fields are set
@@ -20,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if($result) {
             // Redirect to a confirmation page or display a success message
-            header("Location: confirmation.php");
+            header("Location: /view/php/welcomePage.php");
             exit;
         } else {
             // Display an error message if insertion fails
