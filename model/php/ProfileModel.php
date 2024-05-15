@@ -5,40 +5,43 @@ require_once("DBModel.php");
 class ProfileModel extends DBModel {
 
     /**
-     * Crée un nouveau profil dans la base de données
+     * Inserts data into the document table
+     *
+     * @param int $id_createur The ID of the creator
+     * @param int $id_validateur The ID of the validator
+     * @param int $profile The profile ID
+     * @param int $longueur The length
+     * @param int $materiau The material ID
+     * @param int $etat The state ID
+     * @return bool true if insertion successful, false otherwise
      */
-    function create_profile(string $longueur, string $materiau, string $etat, string $profile) {
-        $result = [];
-
+    public function createProfile($id_createur, $id_validateur, $profile, $longueur, $materiau, $etat) {
         if (!$this->connected) {
-            // Gestion des erreurs de connexion à la base de données
+            // Cannot insert if not connected to the database
+            return false;
+        }
+
+        try {
+            // Prepare SQL statement
+            $statement = $this->db->prepare("INSERT INTO document (id_createur, id_validateur, profile, longueur, materiau, etat) VALUES (?, ?, ?, ?, ?, ?)");
+
+            // Bind parameters
+            $statement->bindParam(1, $id_createur, PDO::PARAM_INT);
+            $statement->bindParam(2, $id_validateur, PDO::PARAM_INT);
+            $statement->bindParam(3, $profile, PDO::PARAM_INT);
+            $statement->bindParam(4, $longueur, PDO::PARAM_INT);
+            $statement->bindParam(5, $materiau, PDO::PARAM_INT);
+            $statement->bindParam(6, $etat, PDO::PARAM_INT);
+
+            // Execute the statement
+            $result = $statement->execute();
+
             return $result;
+        } catch (PDOException $e) {
+            // Handle exceptions if insertion fails
+            die("Error inserting document: " . $e->getMessage());
         }
-
-        // Préparer la requête SQL pour insérer un nouveau profil dans la base de données
-        $request = "INSERT INTO document (longueur, materiau, etat, profile) VALUES (:longueur, :materiau, :etat, :profile)";
-        $statement = $this->db->prepare($request);
-
-        // Exécuter la requête SQL, en liant les paramètres pour éviter les injections SQL
-        $success = $statement->execute([
-            "longueur" => $longueur,
-            "materiau" => $materiau,
-            "etat" => $etat,
-            "profile" => $profile
-        ]);
-
-        // Vérifier si le profil a été inséré avec succès
-        if ($success) {
-            $result["success"] = true;
-        } else {
-            $result["error"] = "Failed to create profile. Please try again.";
-        }
-
-        return $result;
     }
-
-    // Autres méthodes pour interagir avec la base de données pour gérer les profils
-    // Par exemple, méthodes pour supprimer un profil, mettre à jour un profil, récupérer tous les profils, etc.
-
 }
+
 ?>
