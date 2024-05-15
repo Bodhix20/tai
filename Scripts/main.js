@@ -12,7 +12,8 @@ window.onload = function(){
     for(let i=0 ; i<labels.length ; i++){
         labels[i].addEventListener("click",function(){
             const selectedProfile = document.querySelector('input[type="radio"][class="profileSelectionRadioBTN"]:checked')
-            currentProfile.setProfileType(selectedProfile.id)            
+            currentProfile.setProfileType(selectedProfile.id)
+            document.getElementById("lengthAndMaterialSelectionContainer").style.display = "block"            
             console.log(currentProfile.profileType)})
     }
 }

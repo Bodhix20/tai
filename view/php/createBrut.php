@@ -39,10 +39,27 @@
 
         </div>
 
-        <div id="materialSelectionContainer">
+        <div id="lengthAndMaterialSelectionContainer" style="display : none ;">
 
+            <h3>Sélectionnez un matériau</h3>
+            <br>
+            
+            <select name="materiau">
+                <option value="" selected disabled hidden>Choisir un matériau</option>
+                <option type="int" value="0" name="0">Acier</option>
+                <option type="int" value="1" name="1">Acier inoxydable</option>
+                <option type="int" value="2" name="2">Aluminium</option>                
+            </select>
+            <br>
+
+            <input type="text" placeholder="Choisissez une longueur"></input>
+            <br>
+
+            <input type="button" value="Submit" type="Submit"></button>
 
         </div>
+
+
 
 
 
