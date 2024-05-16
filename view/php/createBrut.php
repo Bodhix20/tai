@@ -22,6 +22,10 @@
         <!-- PHP only used to display stuff -->
         <?php include_header();?>
 
+        <!-- Ajout du bouton de retour à l'accueil -->
+        <nav>
+            <a href="welcomePage.php" class="button">Retour à l'accueil</a>
+        </nav>
 
         <main>
         
