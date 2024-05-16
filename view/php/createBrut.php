@@ -1,6 +1,6 @@
 <?php
     // do all necessary includes first
-    // __DIR__ allows you to use relative paths explicitly
+    //R __DIR__ allows you to use relative paths explicitly
     // here, the file is in the same folder as the includes.php file (view/)
     include_once __DIR__ . '/includes.php';
     session_start();
