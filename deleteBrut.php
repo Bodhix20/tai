@@ -18,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Supprimer'])) {
 
         // Check if the deletion was successful
         if ($result) {
-            echo "Document with ID $documentId deleted successfully.";
+            $something_to_say = "Document with ID $documentId deleted successfully.";
+            require_once(__DIR__."/controleurmesbruts.php");
         } else {
             echo "Error: Failed to delete document with ID $documentId.";
         }

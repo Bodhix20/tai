@@ -9,8 +9,13 @@
 <html>
 <?php
 require_once(__DIR__.'/view/php/includes.php');
- include_header(); ?>
-
+    include_header(); 
+    
+    // if an error happened
+    if (isset($something_to_say)) {
+        include_error_message($something_to_say);
+    }
+?>
 <?php
 // Inclure le modèle DBModelmesbruts
 require_once (__DIR__.'/model/php/DBModelmesbruts.php');
