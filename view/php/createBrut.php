@@ -24,10 +24,12 @@
 
 
         <main>
+        
+        <?php if(!isset($display_brut)): ?>
 
         <h3>Sélectionnez un type de profile</h3>
 
-        <form method="post" action="/profileController.php">
+        <form method="post" action="/profileController.php" id="profileCreationForm">
             <div id="profileSelectionContainer">        
                 <label class="profileLabels"><img src="/figs/Profiles/Profile_Circulaire.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profile" value="0"> Profile circulaire</label>
                 <label class="profileLabels"><img src="/figs/Profiles/Profile_Circulaire_Creux.PNG" width="200"><input type="radio" class="profileSelectionRadioBTN" name="profile" value="1"> Profile circulaire creux</label>
@@ -43,7 +45,7 @@
                 <br>
                 
                 <div id="createBrutInputContainer">
-                    <select name="materiau">
+                    <select name="materiau" id="materialSelectionDropdown">
                         <option value="" selected disabled hidden>Choisir un matériau</option>
                         <option value="0">Acier</option>
                         <option value="1">Acier inoxydable</option>
@@ -51,20 +53,23 @@
                     </select>
                     <br>
 
-                    <input type="text" placeholder="Choisissez une longueur" name="longueur">
+                    <input type="text" placeholder="Choisissez une longueur" name="longueur" id="lengthInputTextbox">
                     <br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" id="brutFormSubmitButton">
                 </div>
             </div>
         </form>
 
+        <?php endif; ?>
+
+        <?php if(isset($display_brut)): ?>
+            <h3>Brut créée avec succès</h3>
+            <a href="/view/php/mybrut.php">Voir mes bruts</a>
+        <?php endif; ?>   
 
 
-
-
-        </main>
-        
+        </main> 
     </body>
 
 </html>

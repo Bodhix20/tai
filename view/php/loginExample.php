@@ -34,7 +34,7 @@
             }
         ?>
 
-        <form method="post" action="loginController.php" class="loginFormContainer">
+        <form method="post" action="index.php" class="loginFormContainer">
             <fieldset>
                 <legend>Login</legend>
                 <input type="text" placeholder="login" id="login" name="login">

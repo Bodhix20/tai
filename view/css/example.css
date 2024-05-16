@@ -81,7 +81,7 @@ h3 {
     border-bottom: thin solid darkblue;
     padding-bottom: 0.5em;
     /* horizontal line after the text */
-    display: inline-block;
+    /*display: inline-block;*/
     position: relative;
     
 }

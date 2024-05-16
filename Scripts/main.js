@@ -1,4 +1,8 @@
+//importing the necessary module
+import { profile_class } from "./profile_class"
 
+//instantiate the class
+const currentProfile = new profile_class()
 
 window.onload = function(){
 
@@ -7,8 +11,7 @@ window.onload = function(){
 
     for(let i=0 ; i<labels.length ; i++){
         labels[i].addEventListener("click",function(){
-            const selectedProfile = document.querySelector('input[type="radio"][class="profileSelectionRadioBTN"]:checked')
-  
+            currentProfile.setProfileType(i)
             document.getElementById("lengthAndMaterialSelectionContainer").style.display = "block"            
         })
     }
