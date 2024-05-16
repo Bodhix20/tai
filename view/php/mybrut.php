@@ -61,20 +61,6 @@
             <option value="longueur2">Longueur 2</option>
         </select>
         
-        <label for="largeur">Largeur:</label>
-        <select name="largeur" id="largeur">
-            <option value="">-- Sélectionnez --</option>
-            <option value="largeur1">Largeur 1</option>
-            <option value="largeur2">Largeur 2</option>
-        </select>
-        
-        <label for="hauteur">Hauteur:</label>
-        <select name="hauteur" id="hauteur">
-            <option value="">-- Sélectionnez --</option>
-            <option value="hauteur1">Hauteur 1</option>
-            <option value="hauteur2">Hauteur 2</option>
-        </select>
-        
         <label for="materiaux">Matériau:</label>
         <select name="materiaux" id="materiaux">
             <option value="">-- Sélectionnez --</option>
