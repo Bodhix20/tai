@@ -29,6 +29,27 @@ class DocumentModel extends DBModel {
             die("Error executing query: " . $e->getMessage());
         }
     }
+
+    public function deleteDocument($documentId)
+    {
+        try {
+            // Prepare the SQL statement
+            $statement = $this->db->prepare("DELETE FROM document WHERE id = :documentId");
+            
+            // Bind parameters
+            $statement->bindParam(':documentId', $documentId, PDO::PARAM_INT);
+            
+            // Execute the statement
+            $result = $statement->execute();
+            
+            // Return true if the deletion was successful
+            return $result;
+        } catch (PDOException $e) {
+            // Handle any potential exceptions or errors
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
     // D'autres méthodes spécifiques pour interagir avec les documents peuvent être ajoutées ici
 }
 
