@@ -50,6 +50,68 @@ class DocumentModel extends DBModel {
             return false;
         }
     }
+
+    public function getDocumentSettingsById($documentId)
+{
+    try {
+        // Prepare the SQL statement
+        $statement = $this->db->prepare("SELECT * FROM document WHERE id = :documentId");
+        
+        // Bind parameters
+        $statement->bindParam(':documentId', $documentId, PDO::PARAM_INT);
+        
+        // Execute the statement
+        $statement->execute();
+        
+        // Fetch the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        
+        // Return the result
+        return $result;
+    } catch (PDOException $e) {
+        // Handle any potential exceptions or errors
+        echo "Error: " . $e->getMessage();
+        return false;
+    }}
+
+    public function modifyLength($documentId, $newLength) {
+        try {
+            $statement = $this->db->prepare("UPDATE document SET longueur = :newLength WHERE id = :documentId");
+            $statement->bindParam(':documentId', $documentId, PDO::PARAM_INT);
+            $statement->bindParam(':newLength', $newLength, PDO::PARAM_INT);
+            $statement->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function modifyMaterial($documentId, $newMaterial) {
+        try {
+            $statement = $this->db->prepare("UPDATE document SET materiau = :newMaterial WHERE id = :documentId");
+            $statement->bindParam(':documentId', $documentId, PDO::PARAM_INT);
+            $statement->bindParam(':newMaterial', $newMaterial, PDO::PARAM_INT);
+            $statement->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function modifyProfile($documentId, $newProfile) {
+        try {
+            $statement = $this->db->prepare("UPDATE document SET profile = :newProfile WHERE id = :documentId");
+            $statement->bindParam(':documentId', $documentId, PDO::PARAM_INT);
+            $statement->bindParam(':newProfile', $newProfile, PDO::PARAM_INT);
+            $statement->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
     // D'autres méthodes spécifiques pour interagir avec les documents peuvent être ajoutées ici
 }
 

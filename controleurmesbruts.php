@@ -54,7 +54,9 @@ if ($infos_document) {
            <form method="post" action="deleteBrut.php">
                 <button name="Supprimer" value="<?php echo $info['id']; ?>">Supprimer</button>
             </form>
-           <button name="Modifier">Modifier</button>
+            <form method="post" action="/view/php/modifyBrut.php">
+                <button name="Modifier" value="<?php echo $info['id']; ?>" >Modifier</button>
+            </form>
            <button name="Valider">Valider</button>
            <?php
         }
