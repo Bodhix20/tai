@@ -39,11 +39,20 @@ $infos_document = $dbModel->fetchAll($sql);
 
 // Afficher les informations de la table 'document'
 if ($infos_document) {
-    echo "<h2>Informations de la table 'document'</h2>";
+    echo "<h3>Mes bruts</h3>";
     echo "<ul>";
     foreach ($infos_document as $info) {
         echo "<li>";
         echo "ID: " . $info['id'] . ", ID créateur: " . $info['id_createur'] . ", ID validateur: " . $info['id_validateur'] . ", Profil: " . $info['profile'] . ", Longueur: " . $info['longueur'] . ", Matériau: " . $info['materiau'] . ", État: " . $info['etat'];
+        if($_SESSION['role'] == 0){
+           ?>
+           <form method="post" action="deleteBrut.php">
+                <button name="Supprimer" value="<?php echo $info['id']; ?>">Supprimer</button>
+            </form>
+           <button name="Modifier">Modifier</button>
+           <button name="Valider">Valider</button>
+           <?php
+        }
         echo "</li>";
     }
     echo "</ul>";
