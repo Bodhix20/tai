@@ -78,8 +78,9 @@
         <label for="materiaux">Matériau:</label>
         <select name="materiaux" id="materiaux">
             <option value="">-- Sélectionnez --</option>
-            <option value="materiaux1">Matériau 1</option>
-            <option value="materiaux2">Matériau 2</option>
+            <option value="acier">acier</option>
+            <option value="acier inoxydable">acier inoxydable</option>
+            <option value="aluminium">aluminium</option>
         </select>
         
         <label for="date">Date:</label>
