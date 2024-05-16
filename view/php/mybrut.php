@@ -39,7 +39,14 @@
     </style>
 </head>
 <body>
-        <?php include_header(); ?>
+        <!-- PHP only used to display stuff -->
+        <?php include_header();?>
+
+        <!-- Ajout du bouton de retour à l'accueil -->
+<nav>
+    <a href="welcomePage.php" class="button">Retour à l'accueil</a>
+ </nav>
+ 
     <h2>Filtre de recherche</h2>
     <form method="post" action="/controleurmesbruts.php">
         <label for="profil">profil:</label>
