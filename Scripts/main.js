@@ -15,13 +15,4 @@ window.onload = function(){
             document.getElementById("lengthAndMaterialSelectionContainer").style.display = "block"            
         })
     }
-
-    //we also set an event listener on the submit button to set the other important values
-    const material = document.getElementById("materialSelectionDropdown").value
-    const length = document.getElementById("lengthInputTextbox").value
-
-    document.getElementById("brutFormSubmitButton").addEventListener("click",function(){
-        console.log(material, length)
-    })
-
 }

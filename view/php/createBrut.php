@@ -64,15 +64,12 @@
         <?php endif; ?>
 
         <?php if(isset($display_brut)): ?>
-        <div id="brutDisplayer">
-
-
-        </div>
+            <h3>Brut créée avec succès</h3>
+            <a href="/view/php/mybrut.php">Voir mes bruts</a>
         <?php endif; ?>   
 
 
-        </main>
-        
+        </main> 
     </body>
 
 </html>
