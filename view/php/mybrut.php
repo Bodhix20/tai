@@ -41,32 +41,36 @@
 <body>
         <?php include_header(); ?>
     <h2>Filtre de recherche</h2>
-    <form method="post" action="resultats.php">
+    <form method="post" action="/controleurmesbruts.php">
         <label for="profil">profil:</label>
         <select name="profil" id="profil">
             <option value="">-- Sélectionnez --</option>
-            <option value="circulaire creux">circulaire creux</option>
-            <option value="circulaire">circulaire</option>
-            <option value="profil I">profil I</option>
-            <option value="rectangulaire creux">rectangulaire creux</option>
-            <option value="rectangulaire">rectangulaire</option>
-            <option value="profil T">profil T</option>
-            <option value="profile U">profil U </option>
+            <option value="0">circulaire</option>
+            <option value="1">circulaire creux</option>
+            <option value="2">rectangulaire</option>
+            <option value="3">rectangulaire creux</option>
+            <option value="4">profil I</option>
+            <option value="5">profil T</option>
+            <option value="6">profil U </option>
         </select>
         
         <label for="longueur">Longueur:</label>
-        <select name="longueur" id="longueur">
-            <option value="">-- Sélectionnez --</option>
-            <option value="longueur1">Longueur 1</option>
-            <option value="longueur2">Longueur 2</option>
-        </select>
+        <input type="text" name="longueur" placeholder="Longueur">
         
         <label for="materiaux">Matériau:</label>
         <select name="materiaux" id="materiaux">
             <option value="">-- Sélectionnez --</option>
-            <option value="acier">acier</option>
-            <option value="acier inoxydable">acier inoxydable</option>
-            <option value="aluminium">aluminium</option>
+            <option value="0">acier</option>
+            <option value="1">acier inoxydable</option>
+            <option value="2">aluminium</option>
+        </select>
+
+        <label for="etat">etat:</label>
+        <select name="etat" id="etat">
+            <option value="">-- Sélectionnez --</option>
+            <option value="0">en cours</option>
+            <option value="1">validé</option>
+            <option value="2">refusé</option>
         </select>
         
         <label for="date">Date:</label>
@@ -76,6 +80,6 @@
     </form>
 </body>
 </html>
-        
+
 
 

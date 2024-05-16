@@ -36,7 +36,7 @@
 
                 //javascript event listener to open the corresponding pages uppon button click
                 document.getElementById("mesBruts").addEventListener("click",function(){
-                    window.open('/view/php/mybrut.php','_self')
+                    window.open('/controleurmesbruts.php','_self')
                 })
             }
         </script>
