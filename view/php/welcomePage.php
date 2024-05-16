@@ -15,6 +15,23 @@
     if(!isset($_SESSION['firstname'])){
         session_start();
     }
+
+    // Determine the role text
+    $roleText = "";
+    switch ($_SESSION['role']) {
+        case 0:
+            $roleText = "administrateur";
+            break;
+        case 1:
+            $roleText = "utilisateur";
+            break;
+        case 2:
+            $roleText = "controleur";
+            break;
+        default:
+            $roleText = "rôle inconnu";
+            break;
+    }
 ?>
 
 
@@ -49,7 +66,7 @@
 
 
         <main>
-            <h3>Welcome <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname'] ." " .$_SESSION['role']."!!"; ?></h3>
+            <h3>Welcome <?php echo $roleText . " " . $_SESSION['firstname'] . " " . $_SESSION['lastname'] . "!!"; ?></h3>
             
             <div id="brutsOptionContainer">
                 <div id="creationBrut">
