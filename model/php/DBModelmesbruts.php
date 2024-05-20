@@ -1,6 +1,6 @@
 <?php
 
-require_once 'DBModel.php'; // Inclure la classe DBModel
+require_once (__DIR__."/DBModel.php"); // Inclure la classe DBModel
 
 class DocumentModel extends DBModel {
 

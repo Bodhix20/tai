@@ -1,6 +1,6 @@
 <?php
 
-require_once("DBModel.php");
+require_once (__DIR__."/DBModel.php");
 
 class ProfileModel extends DBModel {
 

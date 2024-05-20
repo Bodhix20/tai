@@ -20,7 +20,6 @@ require_once(__DIR__.'/view/php/includes.php');
 // Inclure le modèle DBModelmesbruts
 require_once (__DIR__.'/model/php/DBModelmesbruts.php');
 
-
 // Instancier le modèle DBModelmesbruts
 $dbModel = new DocumentModel();
 
