@@ -21,7 +21,7 @@
         // Check if the document ID is set in the POST data
         if(isset($_POST['Modifier'])) {
             // Perform necessary includes
-            require_once("/model/php/DBModelmesbruts.php");
+            require_once(__DIR__ . "/../../model/php/DBModelmesbruts.php");
 
             // Create an instance of the DocumentModel
             $documentModel = new DocumentModel();
@@ -39,7 +39,7 @@
                 $selectedMaterial = $currentSettings['materiau'];
 
                 // Include the form with prepopulated values
-                include_once __DIR__ . '/modifyBrutForm.php';
+                //include_once __DIR__ . '/modifyBrutForm.php';
             } else {
                 // If document not found, display an error message
                 echo "Error: Document not found.";
@@ -52,8 +52,10 @@
 
     <h3>Modify Brut</h3>
 
-    <form method="post" action="modifyBrutController.php">
+    <form method="post" action="/modifyBrutController.php">
         <div>
+            <p name="idProfile" value="<?php echo $_POST['Modifier'] ?>">Identifiant profilé : <?php echo $_POST['Modifier'] ?></p>
+            <input type="hidden" name="idProfile" value="<?php echo htmlspecialchars($documentId); ?>">
             <label for="profile">Profile:</label>
             <select name="profile" id="profile">
                 <?php

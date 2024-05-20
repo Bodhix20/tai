@@ -1,6 +1,6 @@
 <?php
 // Perform any necessary includes first
-require_once(__DIR__."/model/php/DocumentModel.php");
+require_once(__DIR__."/model/php/DBModelmesbruts.php");
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Update document settings in the database
         $result = $documentModel->updateDocumentSettings(
+            $_POST['idProfile'],
             $_POST['profile'], 
             $_POST['length'], 
             $_POST['material']
@@ -19,12 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($result) {
             // Settings updated successfully
             // Redirect to a success page or display a success message
-            header("Location: modifyBrutSuccess.php");
+            $something_to_say = "Mise à jour des informations complétée avec succès";
+            include_once __DIR__ . '/controleurmesbruts.php';
             exit();
         } else {
             // Display an error message if update fails
-            $something_to_say = "Failed to update document settings.";
-            include_once __DIR__ . '/modifyBrut.php';
+            $something_to_say = "Echec de la mise a jour des informations";
+            include_once __DIR__ . '/controleurmesbruts.php';
             exit();
         }
     } else {

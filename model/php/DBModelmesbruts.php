@@ -74,11 +74,14 @@ class DocumentModel extends DBModel {
         return false;
     }}
 
-    public function modifyLength($documentId, $newLength) {
+    public function updateDocumentSettings($documentId, $profile, $length, $material) {
         try {
-            $statement = $this->db->prepare("UPDATE document SET longueur = :newLength WHERE id = :documentId");
+            $sql = "UPDATE document SET profile = :profile, longueur = :length, materiau = :material WHERE id = :documentId";
+            $statement = $this->db->prepare($sql);
             $statement->bindParam(':documentId', $documentId, PDO::PARAM_INT);
-            $statement->bindParam(':newLength', $newLength, PDO::PARAM_INT);
+            $statement->bindParam(':profile', $profile, PDO::PARAM_INT);
+            $statement->bindParam(':length', $length, PDO::PARAM_INT);
+            $statement->bindParam(':material', $material, PDO::PARAM_INT);
             $statement->execute();
             return true;
         } catch (PDOException $e) {
@@ -87,24 +90,11 @@ class DocumentModel extends DBModel {
         }
     }
 
-    public function modifyMaterial($documentId, $newMaterial) {
+    public function updateDocumentState($documentId, $newState) {
         try {
-            $statement = $this->db->prepare("UPDATE document SET materiau = :newMaterial WHERE id = :documentId");
+            $statement = $this->db->prepare("UPDATE document SET etat = :newState WHERE id = :documentId");
             $statement->bindParam(':documentId', $documentId, PDO::PARAM_INT);
-            $statement->bindParam(':newMaterial', $newMaterial, PDO::PARAM_INT);
-            $statement->execute();
-            return true;
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-            return false;
-        }
-    }
-
-    public function modifyProfile($documentId, $newProfile) {
-        try {
-            $statement = $this->db->prepare("UPDATE document SET profile = :newProfile WHERE id = :documentId");
-            $statement->bindParam(':documentId', $documentId, PDO::PARAM_INT);
-            $statement->bindParam(':newProfile', $newProfile, PDO::PARAM_INT);
+            $statement->bindParam(':newState', $newState, PDO::PARAM_INT);
             $statement->execute();
             return true;
         } catch (PDOException $e) {

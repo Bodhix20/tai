@@ -36,11 +36,7 @@ if (!isset($_SESSION['id'])) {
 $id_createur = $_SESSION['id'];
 
 // Récupérer les documents correspondant à l'ID du créateur de session
-$documents = $dbModel->getDocumentsByCreatorId($id_createur);
-
-// Récupérer les informations de la table 'document'
-$sql = "SELECT * FROM document";
-$infos_document = $dbModel->fetchAll($sql);
+$infos_document = $dbModel->getDocumentsByCreatorId($id_createur);
 
 // Afficher les informations de la table 'document'
 if ($infos_document) {
@@ -57,7 +53,9 @@ if ($infos_document) {
             <form method="post" action="/view/php/modifyBrut.php">
                 <button name="Modifier" value="<?php echo $info['id']; ?>" >Modifier</button>
             </form>
-           <button name="Valider">Valider</button>
+            <form method="post" action="validateBrut.php">
+                <button name="Valider">Valider</button>
+            </form>
            <?php
         }
         echo "</li>";
