@@ -54,7 +54,7 @@ if ($infos_document) {
                 <button name="Modifier" value="<?php echo $info['id']; ?>" >Modifier</button>
             </form>
             <form method="post" action="validateBrut.php">
-                <button name="Valider">Valider</button>
+                <button name="Valider" value="<?php echo $info['id']; ?>">Valider</button>
             </form>
            <?php
         }
