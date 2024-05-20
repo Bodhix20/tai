@@ -74,7 +74,6 @@ if ($infos_document) {
     echo "</thead>";
     echo "<tbody>";
     foreach ($infos_document as $info) {
-<<<<<<< HEAD
         echo "<tr>";
         echo "<td>" . htmlspecialchars($info['id']) . "</td>";
         echo "<td>" . htmlspecialchars($info['id_createur']) . "</td>";
@@ -94,22 +93,6 @@ if ($infos_document) {
             echo '<form method="post" action="validateBrut.php" style="display:inline-block;">
                     <button name="Valider">Valider</button>
                   </form>';
-=======
-        echo "<li>";
-        echo "ID: " . $info['id'] . ", ID créateur: " . $info['id_createur'] . ", ID validateur: " . $info['id_validateur'] . ", Profil: " . $info['profile'] . ", Longueur: " . $info['longueur'] . ", Matériau: " . $info['materiau'] . ", État: " . $info['etat'];
-        if($_SESSION['role'] == 0){
-           ?>
-           <form method="post" action="deleteBrut.php">
-                <button name="Supprimer" value="<?php echo $info['id']; ?>">Supprimer</button>
-            </form>
-            <form method="post" action="/view/php/modifyBrut.php">
-                <button name="Modifier" value="<?php echo $info['id']; ?>" >Modifier</button>
-            </form>
-            <form method="post" action="validateBrut.php">
-                <button name="Valider" value="<?php echo $info['id']; ?>">Valider</button>
-            </form>
-           <?php
->>>>>>> d99d67aeda60a9f1c641cc5b2b49de941454a71d
         }
         echo "</td>";
         echo "</tr>";
