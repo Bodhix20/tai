@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // If the form is not submitted, redirect back to the modifyBrut.php page
-    header("Location: modifyBrut.php");
+    header("Location: /tai/tai_app_2023_2024_caterpillar/project/myBrut.php");
     exit();
 }
 ?>

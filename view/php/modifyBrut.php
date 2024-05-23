@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/view/css/example.css">
+        <link rel="stylesheet" href="/tai/tai_app_2023_2024_caterpillar/project/view/css/example.css">
         <title>Welcome</title>
     </head>
     <body>
@@ -52,7 +52,7 @@
 
     <h3>Modify Brut</h3>
 
-    <form method="post" action="/modifyBrutController.php">
+    <form method="post" action="/tai/tai_app_2023_2024_caterpillar/project/modifyBrutController.php">
         <div>
             <p name="idProfile" value="<?php echo $_POST['Modifier'] ?>">Identifiant profilé : <?php echo $_POST['Modifier'] ?></p>
             <input type="hidden" name="idProfile" value="<?php echo htmlspecialchars($documentId); ?>">

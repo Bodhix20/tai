@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/view/css/example.css">
+    <link rel="stylesheet" href="/tai/tai_app_2023_2024_caterpillar/project/view/css/example.css">
     <title>Welcome</title>
     <style>
         /* CSS pour afficher les filtres sur la même ligne */
@@ -44,11 +44,11 @@
 
         <!-- Ajout du bouton de retour à l'accueil -->
 <nav>
-    <a href="welcomePage.php" class="button">Retour à l'accueil</a>
+    <a href="/tai/tai_app_2023_2024_caterpillar/project/welcomePage.php" class="button">Retour à l'accueil</a>
  </nav>
  
     <h2>Filtre de recherche</h2>
-    <form method="post" action="/controleurmesbruts.php">
+    <form method="post" action="/tai/tai_app_2023_2024_caterpillar/project/view/php/controleurmesbruts.php">
         <label for="profil">profil:</label>
         <select name="profil" id="profil">
             <option value="">-- Sélectionnez --</option>

@@ -1,7 +1,12 @@
 <?php
 
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Include the DocumentModel class
-require_once(__DIR__.'/model/php/DBModelMesBruts.php');
+require_once(__DIR__.'/model/php/DBModelmesbruts.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Supprimer'])) {

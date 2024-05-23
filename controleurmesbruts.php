@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/view/css/example.css">
+    <link rel="stylesheet" href="/tai/tai_app_2023_2024_caterpillar/project/view/css/example.css">
     <title>Welcome</title>
     <style>
         table {
@@ -84,14 +84,14 @@ if ($infos_document) {
         echo "<td>" . htmlspecialchars($info['etat']) . "</td>";
         echo "<td class='actions'>";
         if ($_SESSION['role'] == 0) {
-            echo '<form method="post" action="deleteBrut.php" style="display:inline-block;">
+            echo '<form method="post" action="/tai/tai_app_2023_2024_caterpillar/project/deleteBrut.php" style="display:inline-block;">
                     <button name="Supprimer" value="' . htmlspecialchars($info['id']) . '">Supprimer</button>
                   </form>';
-            echo '<form method="post" action="/view/php/modifyBrut.php" style="display:inline-block;">
+            echo '<form method="post" action="/tai/tai_app_2023_2024_caterpillar/project/view/php/modifyBrut.php" style="display:inline-block;">
                     <button name="Modifier" value="' . htmlspecialchars($info['id']) . '">Modifier</button>
                   </form>';
-            echo '<form method="post" action="validateBrut.php" style="display:inline-block;">
-                    <button name="Valider">Valider</button>
+            echo '<form method="post" action="/tai/tai_app_2023_2024_caterpillar/project/validateBrut.php" style="display:inline-block;">
+                    <button name="Valider" value="<?php echo $info['id']; ?>">Valider</button>
                   </form>';
         }
         echo "</td>";

@@ -40,7 +40,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/view/css/example.css">
+        <link rel="stylesheet" href="/tai/tai_app_2023_2024_caterpillar/project/view/css/example.css">
         <title>Welcome</title>
 
         <script>
@@ -48,12 +48,12 @@
 
                 //javascript event listener to open the corresponding pages uppon button click
                 document.getElementById("creerBrut").addEventListener("click",function(){
-                    window.open('/view/php/createBrut.php','_self')
+                    window.open('/tai/tai_app_2023_2024_caterpillar/project/view/php/createBrut.php','_self')
                 })
 
                 //javascript event listener to open the corresponding pages uppon button click
                 document.getElementById("mesBruts").addEventListener("click",function(){
-                    window.open('/controleurmesbruts.php','_self')
+                    window.open('/tai/tai_app_2023_2024_caterpillar/project/controleurmesbruts.php','_self')
                 })
             }
         </script>

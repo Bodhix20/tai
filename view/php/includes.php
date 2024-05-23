@@ -15,7 +15,7 @@
             <!-- A form to logout -->
             <!-- It redirects to the form controller -->
             <!-- Note that this could have been done with a simple link and a $_GET parameter -->
-            <form method="post" action="/index.php" id="logoutFormContainer">
+            <form method="post" action="/tai/tai_app_2023_2024_caterpillar/project/index.php" id="logoutFormContainer">
                 <fieldset>                    
                     <button type="submit">Logout</button>
                 </fieldset>

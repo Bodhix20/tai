@@ -1,5 +1,5 @@
 //importing the necessary module
-import { profile_class } from "./profile_class"
+import { profile_class } from "/tai/tai_app_2023_2024_caterpillar/project/profile_class"
 
 //instantiate the class
 const currentProfile = new profile_class()
@@ -11,7 +11,6 @@ window.onload = function(){
 
     for(let i=0 ; i<labels.length ; i++){
         labels[i].addEventListener("click",function(){
-            currentProfile.setProfileType(i)
             document.getElementById("lengthAndMaterialSelectionContainer").style.display = "block"            
         })
     }
