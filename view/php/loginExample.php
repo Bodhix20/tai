@@ -40,7 +40,7 @@
                 <input type="text" placeholder="login" id="login" name="login">
                 <input type="password" placeholder='password' id='pwd' name="pwd">
                 <button type="submit">Submit</button>
-                <a href="/view/php/register.php"><p> Pas de compte ? Créez en un ! </p></a>
+                <a href="/tai/tai_app_2023_2024_caterpillar/project/view/php/register.php"><p> Pas de compte ? Créez en un ! </p></a>
             </fieldset>
         </form>
 
